@@ -2,21 +2,20 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   labels:
-    app: mealie
-  name: mealie
-  namespace: mealie
+    app: raid
+  name: raid
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: mealie
+      app: raid
   template:
     metadata:
       labels:
-        app: mealie
+        app: raid
     spec:
       containers:
-      - image: ghcr.io/mealie-recipes/mealie:v3.3.2
-        name: mealie
-        ports: 
+        - image: docker.io/valeriansaliou/raider:latest
+          name: raider
+          ports:
           - containerPort: 9000
